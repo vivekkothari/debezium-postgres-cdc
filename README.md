@@ -40,6 +40,10 @@ Few things to note:
    Thus, I am using `postgres` user which us a super user in the bitnami images.
 
 ## Verify things
+![CleanShot 2025-03-23 at 20 43 38@2x](https://github.com/user-attachments/assets/4eb600d6-8eca-414d-9040-99c9c2befa87)
+
+![CleanShot 2025-03-23 at 20 44 06@2x](https://github.com/user-attachments/assets/5ee330b3-5550-4f77-bf02-c6f53f8c2f34)
+
 
 1. An `employee` should be automatically created when to bring up docker.
 2. Run following cURL to check the status, it should be in running state.
