@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.apache.kafka:kafka-clients:4.0.0") // Kafka Consumer
+    implementation("io.debezium:debezium-api:3.0.8.Final") // Debezium API
+    implementation("io.debezium:debezium-embedded:3.0.8.Final") // Embedded Debezium (optional)
+    implementation("io.debezium:debezium-core:3.0.8.Final") // Core Debezium Libraries
+    implementation("ch.qos.logback:logback-classic:1.5.18") // Logging
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
