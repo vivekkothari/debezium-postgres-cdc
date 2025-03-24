@@ -19,14 +19,14 @@ curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json
     "database.dbname": "test",
     "plugin.name": "pgoutput",
     "slot.name": "debezium_slot",
-    "publication.autocreate.mode": "filtered",
+    "publication.autocreate.mode": "all_tables",
     "publication.name": "dbz_publication",
     "database.history.kafka.bootstrap.servers": "kafka1:9092",
     "database.history.kafka.topic": "schema-changes.test",
     "topic.prefix": "test",
-    "replica.identity.autoset": "true",
-    "replica.identity.autoset.drop.recreate": "true",
+    "replica.identity.autoset.values": "*:DEFAULT",
     "tombstones.on.delete": "true",
+    "skipped.operations": "none",
     "key.converter": "org.apache.kafka.connect.json.JsonConverter",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter"
   }
@@ -75,7 +75,7 @@ curl -X GET http://localhost:8083/connectors/debezium-postgres-connector/status 
 4. Goto `http://localhost:8080/ui/clusters/debz_connector_cluster/all-topics/` there should be a topic with name
    `test.public.employee`
 5. The message should be sent to the topic.
-6. Start `org.example.DebeziumConsumer` to start consumer.
+6. Start `com.github.vivekkothari.cdc.DebeziumConsumer` to start consumer.
 7. Now start making some inserts/update/deletes to employee table.
 8. You should see logs like,
 
