@@ -24,7 +24,7 @@ curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json
     "database.history.kafka.bootstrap.servers": "kafka1:9092",
     "database.history.kafka.topic": "schema-changes.test",
     "topic.prefix": "test",
-    "replica.identity.autoset.values": "*:DEFAULT",
+    "replica.identity.autoset.values": "*:FULL",
     "tombstones.on.delete": "true",
     "skipped.operations": "none",
     "key.converter": "org.apache.kafka.connect.json.JsonConverter",
